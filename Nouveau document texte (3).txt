@@ -1,0 +1,58 @@
+-connet to machine azure:
+ssh -i jenkins.pem azureuser@4.180.8.54
+
+
+-update package:
+apt-get update
+apt-get upgrade
+
+-install java 17:
+apt install openjdk-17-jdk openjdk-17-jre
+java -version
+
+-install jenkins :
+wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+sudo apt update
+sudo apt install jenkins
+sudo systemctl start jenkins
+sudo systemctl status jenkins
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+C:\Users\hatem\AppData\Local\Programs\Python\Python312\Scripts\
+C:\Users\hatem\AppData\Local\Programs\Python\Python312\
+C:\Users\hatem\AppData\Local\Programs\Python\Launcher\
+
+-Opening the Firewall:
+sudo ufw allow 8080
+sudo ufw allow OpenSSH
+sudo ufw enable
+sudo ufw status
+
+
+-Setting Up Jenkins
+To set up your installation, visit Jenkins on its default port, 8080, 
+using your server domain name or IP address: http://4.180.8.54:8080/
+
+In the terminal window, use the cat command to display the password:
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
+copy the password from the terminal and paste it into the Administrator password field, then click Continue.
+
